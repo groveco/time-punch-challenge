@@ -22,8 +22,8 @@
  (Activity Consolidated)
  OUTPUT:
  
- ID  Name    Activity    Start Time  End Time
- 
+    ID  Name    Activity    Start Time  End Time
+    
     Joe     Picking     2021-01-24 9:05 AM      2021-01-24 10:00 AM
     
     William Packing     2021-01-24 9:15 AM      2021-01-24 10:00 AM
