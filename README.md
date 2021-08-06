@@ -1,4 +1,18 @@
-# time-punch-challenge
+
+## Time Punch Challenge Instructions
+1. Fork this repo
+2. Make changes to the code in the forked repository
+3. Once ready, create a PR from the forked repository into this repository
+
+## Environment
+This is a Python 3 project. 
+
+## Dependencies
+* __Database:__ sqlite or postgres database
+* __Other Packages:__
+
+
+## Time Punch Challenge details
 1. The input database has Employee and Punches. 
 2. The goal is to combine punches. 
 3. For the input in the database, below is the expected output
@@ -19,7 +33,7 @@
 
 
 ****** EXPECTED OUTPUT BELOW ******
- (Activity Consolidated)
+
  OUTPUT:
  
     ID  Name    Activity    Start Time  End Time
