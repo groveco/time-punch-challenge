@@ -9,7 +9,7 @@ This is a Python 3 project.
 
 ## Dependencies
 * __Database:__ postgres database
-* __Other Packages:__
+* __Other Packages:__ psycopg2 (refer to requirements.txt)
 
 
 ## Time Punch Challenge details
