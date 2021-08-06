@@ -8,15 +8,15 @@
 This is a Python 3 project. 
 
 ## Dependencies
-* __Database:__ sqlite or postgres database
+* __Database:__ postgres database
 * __Other Packages:__
 
 
 ## Time Punch Challenge details
-1. The input database has Employee and Punches. 
-2. The goal is to combine punches. 
-3. For the input in the database, below is the expected output
-4. Special case: If there is a different activity between 2 of the same for the same employee, combine them to the bigger activity if the `middle` activity duration is <= 5 minutes
+1. The input database has Employee and Punches. The SQL file has the DDLs to seed data. The SQL is catered to PostgreSQL syntax.
+3. The goal is to combine punches. 
+4. For the input in the database, below is the expected output
+5. Special case: If there is a different activity between 2 of the same for the same employee, combine them to the bigger activity if the `middle` activity duration is <= 5 minutes
    e.g. 
    
    Input 
