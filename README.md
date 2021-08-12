@@ -55,3 +55,21 @@ This is a Python 3 project.
     William Picking     2021-01-24 3:05 PM      2021-01-24 5:00 PM
     
     Joe     Cleaning    2021-01-24 11:55 PM     2021-01-25 12:35 AM
+
+How to run project:
+1. create a db in postgres
+2. Load seed data using the command
+   psql -U <username> -h localhost -d <db_name> -f data_load.sql
+3. run Python project using the command
+   python project.py
+   
+Notes:
+* I found some data discrepancies in the seed data that I have since corrected.
+* You will find one extra row for William for packing in the results. 
+  I couldnt figure out why that should be  merged with the other William packing activity. 
+  
+     
+   
+
+
+
