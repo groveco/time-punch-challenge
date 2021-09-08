@@ -1,3 +1,8 @@
+TO RUN PROJECT:
+1. Clone the repo
+2. Run 'npm install'
+3. Run 'node timePunch.js'
+
 
 ## Time Punch Challenge Instructions
 1. Fork this repo
@@ -55,3 +60,6 @@ This is a Python 3 project.
     William Picking     2021-01-24 3:05 PM      2021-01-24 5:00 PM
     
     Joe     Cleaning    2021-01-24 11:55 PM     2021-01-25 12:35 AM
+    
+    
+    
