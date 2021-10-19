@@ -29,5 +29,5 @@ INSERT INTO public.employee_activity(id, employee_id, activity_name, start_time,
 INSERT INTO public.employee_activity(id, employee_id, activity_name, start_time, end_time) VALUES (9, 3, 'Cleaning', '2021-01-24 13:00:00 -08:00', '2021-01-24 13:05:00 -08:00');
 INSERT INTO public.employee_activity(id, employee_id, activity_name, start_time, end_time) VALUES (10, 3, 'Picking', '2021-01-24 13:05:00 -08:00', '2021-01-24 14:00:00 -08:00');
 INSERT INTO public.employee_activity(id, employee_id, activity_name, start_time, end_time) VALUES (11, 2, 'Packing', '2021-01-24 13:30:00 -08:00', '2021-01-24 15:00:00 -08:00');
-INSERT INTO public.employee_activity(id, employee_id, activity_name, start_time, end_time) VALUES (12, 2, 'Picking', '2021-01-24 15:05:00 -08:00', '2021-01-24 15:00:00 -08:00');
-INSERT INTO public.employee_activity(id, employee_id, activity_name, start_time, end_time) VALUES (13, 1, 'Cleaning', '2021-01-24 23:55:00 -08:00',	'2021-01-25 12:35:00 -08:00');
+INSERT INTO public.employee_activity(id, employee_id, activity_name, start_time, end_time) VALUES (12, 2, 'Picking', '2021-01-24 15:05:00 -08:00', '2021-01-24 17:00:00 -08:00');
+INSERT INTO public.employee_activity(id, employee_id, activity_name, start_time, end_time) VALUES (13, 1, 'Cleaning', '2021-01-24 23:55:00 -08:00',	'2021-01-25 0:35:00 -08:00');
