@@ -1,0 +1,19 @@
+{
+  "name": "time-punch-challenge",
+  "version": "1.0.0",
+  "description": "1. Fork this repo 2. Make changes to the code in the forked repository 3. Once ready, create a PR from the forked repository into this repository",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aseiden/time-punch-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aseiden/time-punch-challenge/issues"
+  },
+  "homepage": "https://github.com/aseiden/time-punch-challenge#readme"
+}
