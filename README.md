@@ -14,7 +14,7 @@ This is a Python 3 project.
 
 ## Time Punch Challenge details
 1. The input database has Employee and Punches. The SQL file has the DDLs to seed data. The SQL is catered to PostgreSQL syntax.
-3. The goal is to combine punches. 
+3. The goal is to combine punches.
 4. For the input in the database, below is the expected output
 5. Special case: If there is a different activity between 2 of the same for the same employee, combine them to the bigger activity if the `middle` activity duration is <= 5 minutes
    e.g. 
@@ -55,3 +55,22 @@ This is a Python 3 project.
     William Picking     2021-01-24 3:05 PM      2021-01-24 5:00 PM
     
     Joe     Cleaning    2021-01-24 11:55 PM     2021-01-25 12:35 AM
+
+**** SUBMISSION NOTES ****
+
+*Assumptions:*
+1. Assume that there are no overlapping activities for the same employee
+2. "Combining Punches" general definition:
+   - Combine 2 cronologically consequitive activities if:
+      a. They belong to the same employee
+      b. They have the same activity name
+
+*Considerations:*
+1. End time for ID #12 is less than start time, I believe the end time should be 17:00
+2. Special case wasn't clear. Specifically does tiny_activity[end_time] need to be equal to next_activity[start_time] in order to merge the 3 activities? I assumed that this is not a hard requirement and thus, if I see a tiny_activity between 2 of the same type for the same employee, I merge all 3 together regardless of the start/end times.
+
+*Running the program:*
+1. Create a DB in postgres, give it a name (`db_name`)
+2. Create tables and data using: `psql -d <db_name> -f data_load.sql`
+3. Install requirements: `pip3 install -r requirements.txt`
+3. Run python code: `python3 submission.py`
