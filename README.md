@@ -1,3 +1,20 @@
+## Submission Notes
+
+**Assumptions**
+1. Assume that there are no overlapping activities for the same employee
+2. "Combining Punches" general definition: Combine 2 cronologically consequitive activities if:
+      - They belong to the same employee
+      - They have the same activity name
+
+**Considerations**
+1. End time for ID #12 is less than start time, I believe the end time should be 17:00
+2. Special case wasn't clear. Specifically does `tiny_activity[end_time]` need to be equal to `next_activity[start_time]` in order to merge the 3 activities? I assumed that this is not a hard requirement and thus, if I see a `tiny_activity` between 2 of the same type for the same employee, I merge all 3 together regardless of the start/end times.
+
+**Running the program**
+1. Create a DB in postgres, give it a name (`db_name`)
+2. Create tables and data using: `psql -d <db_name> -f data_load.sql`
+3. Install requirements: `pip3 install -r requirements.txt`
+3. Run python code: `python3 submission.py`
 
 ## Time Punch Challenge Instructions
 1. Fork this repo
@@ -55,22 +72,3 @@ This is a Python 3 project.
     William Picking     2021-01-24 3:05 PM      2021-01-24 5:00 PM
     
     Joe     Cleaning    2021-01-24 11:55 PM     2021-01-25 12:35 AM
-
-**** SUBMISSION NOTES ****
-
-*Assumptions:*
-1. Assume that there are no overlapping activities for the same employee
-2. "Combining Punches" general definition:
-   - Combine 2 cronologically consequitive activities if:
-      a. They belong to the same employee
-      b. They have the same activity name
-
-*Considerations:*
-1. End time for ID #12 is less than start time, I believe the end time should be 17:00
-2. Special case wasn't clear. Specifically does tiny_activity[end_time] need to be equal to next_activity[start_time] in order to merge the 3 activities? I assumed that this is not a hard requirement and thus, if I see a tiny_activity between 2 of the same type for the same employee, I merge all 3 together regardless of the start/end times.
-
-*Running the program:*
-1. Create a DB in postgres, give it a name (`db_name`)
-2. Create tables and data using: `psql -d <db_name> -f data_load.sql`
-3. Install requirements: `pip3 install -r requirements.txt`
-3. Run python code: `python3 submission.py`
