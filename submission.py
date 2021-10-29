@@ -26,22 +26,40 @@ def run_program():
 def combine_punches(emp_activities: List[Dict[str, Any]]) -> List[List[str]]:
     result: List[List[str]] = []
     prev_activity: Dict[str, Any] = None
+    index = 0
     # activities for an employee are cronological and non-overlapping
-    for i in range(0, len(emp_activities)):
-        activity = emp_activities[i]
+    while index < len(emp_activities):
+        activity = emp_activities[index]
         if prev_activity == None:
             prev_activity = activity
         else:
-            if activity["activity_name"] == prev_activity["activity_name"]:
+            # combine condition -> if activity name matches and time between is <= 5 mins
+            if (activity["activity_name"] == prev_activity["activity_name"] and (activity["start_time"] - prev_activity["end_time"]).seconds <= 300):
                 prev_activity["end_time"] = activity["end_time"]
             else:
-                if (activity["duration"] <= 300 and i < len(emp_activities) - 1 and emp_activities[i+1]["activity_name"] ==  prev_activity["activity_name"]):
-                    prev_activity["end_time"] = emp_activities[i+1]["end_time"]
+                if (activity["duration"] <= 300 and index < len(emp_activities) - 1 and emp_activities[index+1]["activity_name"] ==  prev_activity["activity_name"]):
+                    prev_activity["end_time"] = emp_activities[index+1]["end_time"]
+                    # skip the next activity since it's already been merged
+                    index += 1
                 else:
-                    result.append([prev_activity["id"], prev_activity["employee_name"], prev_activity["activity_name"], prev_activity["start_time"], prev_activity["end_time"]])
+                    result.append([
+                        prev_activity["id"], 
+                        prev_activity["employee_name"], 
+                        prev_activity["activity_name"], 
+                        prev_activity["start_time"].strftime("%Y-%m-%d %I:%M %p"), 
+                        prev_activity["end_time"].strftime("%Y-%m-%d %I:%M %p")
+                    ])
                     prev_activity = activity
+        index += 1
+    
     # append last activity
-    result.append([prev_activity["id"], prev_activity["employee_name"], prev_activity["activity_name"], prev_activity["start_time"], prev_activity["end_time"]])
+    result.append([
+        prev_activity["id"], 
+        prev_activity["employee_name"], 
+        prev_activity["activity_name"], 
+        prev_activity["start_time"].strftime("%Y-%m-%d %I:%M %p"), 
+        prev_activity["end_time"].strftime("%Y-%m-%d %I:%M %p")
+    ])
     return result
     
 
@@ -59,12 +77,11 @@ def get_emp_activities(emp_id: int, emp_name: str, cur) -> List[Dict[str, Any]]:
             "id": activity[0],
             "employee_name": emp_name,
             "activity_name": activity[2],
-            "start_time": activity[3].strftime("%Y-%m-%d %I:%M %p"), #YYYY-mm-dd hh:mm am/pm
-            "end_time": activity[4].strftime("%Y-%m-%d %I:%M %p"),
+            "start_time": activity[3],
+            "end_time": activity[4],
             "duration": (activity[4] - activity[3]).seconds
         })
     return emp_activities
-
 
 def get_employees(cur) -> Dict[int, str]:
     id_to_employee: Dict[int, str] = {}
