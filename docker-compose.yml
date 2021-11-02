@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    volumes:
+      - .:/usr/src/app/
+    ports:
+      - "5000:5000"
+    links:
+      - postgres
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: hopefullyaNISTcompliantpassword
